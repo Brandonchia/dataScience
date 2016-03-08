@@ -37,12 +37,14 @@ All you need to do is three steps
 The algorithm is based on the report published and recommanded by World Health Organization
 
 _For male_
-```{r,results='hide'}
+
+```r
 print ('ideal weight = ( Height - 80 ) * 0.7')
 idealWeiM <- function(h) (h-80) * 0.7
 ```
 _For female_
-```{r,results='hide'}
+
+```r
 print ('ideal weight = (Height -70) * 0.6')
 idealWeiF <- function(h) (h-70) * 0.6
 ```
@@ -52,12 +54,19 @@ _It is good for people whose weight is between 0.9 times of and 1.1 times of ide
 ---
 ## Example
 I'm 176 centimeter in height and 70 kilogram in weight,and I'm male.
-```{r,results='hold'}
+
+```r
 idealWei <-function(sex,h){
         ifelse(sex =='male',idealWeiM(h),idealWeiF(h))
 }
 print(paste('My ideal weight is in the interval:'))
 idealWei('male',176)*0.9
 idealWei('male',176)*1.1
+```
+
+```
+## [1] "My ideal weight is in the interval:"
+## [1] 60.48
+## [1] 73.92
 ```
 
